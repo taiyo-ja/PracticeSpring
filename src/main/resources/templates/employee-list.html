@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>社員管理システム - 社員一覧</title>
+    <link rel="stylesheet" th:href="@{/css/employee-list.css}">
+</head>
+<body>
+<header class="app-header">
+    <h1>社員管理システム</h1>
+    <div class="header-info">
+        <span class="user-name">ログインユーザー: 管理者</span>
+    </div>
+</header>
+
+<main class="list-container">
+    <div class="list-header">
+        <h2 class="list-title">社員一覧</h2>
+        <a th:href="@{/}" class="btn btn-back">メニューに戻る</a>
+    </div>
+
+    <div class="list-toolbar">
+        <span class="result-count" th:text="'全 ' + ${employees.size()} + ' 件'"></span>
+        <a th:href="@{/new}" class="btn btn-primary">＋ 新規登録</a>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="employee-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>名前</th>
+                <th>部署</th>
+                <th class="col-action">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="e : ${employees}">
+                <td th:text="${e.id}"></td>
+                <td th:text="${e.name}"></td>
+                <td>
+                    <span class="dept-badge" th:text="${e.department}"></span>
+                </td>
+                <td class="col-action">
+                    <a th:href="@{/employees/{id}(id=${e.id})}" class="action-link action-view">詳細</a>
+                    <a th:href="@{/employees/{id}/edit(id=${e.id})}" class="action-link action-edit">編集</a>
+                    <a th:href="@{/employees/{id}/delete(id=${e.id})}" class="action-link action-delete"
+                       onclick="return confirm('この社員情報を削除しますか？');">削除</a>
+                </td>
+            </tr>
+
+            <tr th:if="${employees.isEmpty()}">
+                <td colspan="4" class="empty-row">登録されている社員はいません</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<footer class="app-footer">
+    <p>&copy; 2026 Employee Management System</p>
+</footer>
+</body>
+</html>

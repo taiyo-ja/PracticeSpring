@@ -1,0 +1,113 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* ヘッダー */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 16px 32px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.user-name {
+    font-size: 14px;
+    color: #cbd5e0;
+}
+
+/* メニュー全体 */
+.menu-container {
+    max-width: 960px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.menu-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+    border-left: 4px solid #2c3e50;
+    padding-left: 12px;
+}
+
+/* カードグリッド */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 640px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* メニューカード */
+.menu-card {
+    display: block;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    border-color: #2c3e50;
+}
+
+.menu-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.menu-label {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.menu-desc {
+    font-size: 13px;
+    color: #718096;
+}
+
+/* 削除カードだけ警告色を強調 */
+.menu-card--danger:hover {
+    border-color: #e53e3e;
+}
+
+.menu-card--danger .menu-icon {
+    color: #e53e3e;
+}
+
+/* フッター */
+.app-footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 12px;
+    color: #a0aec0;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>社員管理システム - 社員検索</title>
+    <link rel="stylesheet" th:href="@{/css/employee-list.css}">
+    <link rel="stylesheet" th:href="@{/css/employee-search.css}">
+</head>
+<body>
+<header class="app-header">
+    <h1>社員管理システム</h1>
+    <div class="header-info">
+        <span class="user-name">ログインユーザー: 管理者</span>
+    </div>
+</header>
+
+<main class="list-container">
+    <div class="list-header">
+        <h2 class="list-title">社員検索</h2>
+        <a th:href="@{/}" class="btn btn-back">メニューに戻る</a>
+    </div>
+
+    <!-- 検索フォーム -->
+    <div class="search-card">
+        <form th:action="@{/search}" method="get" class="search-form">
+            <div class="search-field">
+                <label for="name">名前</label>
+                <input type="text" id="name" name="name" th:value="${name}" placeholder="山田">
+            </div>
+            <div class="search-field">
+                <label for="department">部署</label>
+                <input type="text" id="department" name="department" th:value="${department}" placeholder="開発部">
+            </div>
+            <div class="search-actions">
+                <button type="submit" class="btn btn-primary">検索</button>
+                <a th:href="@{/search}" class="btn btn-cancel">クリア</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- 検索結果 -->
+    <div th:if="${searched}">
+        <div class="list-toolbar">
+            <span class="result-count" th:text="'検索結果 ' + ${employees.size()} + ' 件'"></span>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="employee-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名前</th>
+                    <th>部署</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="e : ${employees}">
+                    <td th:text="${e.id}"></td>
+                    <td th:text="${e.name}"></td>
+                    <td>
+                        <span class="dept-badge" th:text="${e.department}"></span>
+                    </td>
+                </tr>
+
+                <tr th:if="${employees.isEmpty()}">
+                    <td colspan="3" class="empty-row">該当する社員が見つかりませんでした</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<footer class="app-footer">
+    <p>&copy; 2026 Employee Management System</p>
+</footer>
+</body>
+</html>

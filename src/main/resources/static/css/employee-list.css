@@ -1,0 +1,202 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* ヘッダー（メニュー画面と共通デザイン） */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 16px 32px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.user-name {
+    font-size: 14px;
+    color: #cbd5e0;
+}
+
+/* コンテナ */
+.list-container {
+    max-width: 960px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.list-title {
+    font-size: 22px;
+    border-left: 4px solid #2c3e50;
+    padding-left: 12px;
+}
+
+/* ツールバー */
+.list-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.result-count {
+    font-size: 13px;
+    color: #718096;
+}
+
+/* ボタン共通 */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn-primary {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1a252f;
+    transform: translateY(-1px);
+}
+
+.btn-back {
+    background-color: #fff;
+    color: #2c3e50;
+    border: 1px solid #cbd5e0;
+}
+
+.btn-back:hover {
+    background-color: #edf2f7;
+}
+
+/* テーブル */
+.table-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employee-table thead {
+    background-color: #edf2f7;
+}
+
+.employee-table th {
+    text-align: left;
+    font-size: 13px;
+    color: #4a5568;
+    padding: 12px 16px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.employee-table td {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.employee-table tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+.employee-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.col-action {
+    white-space: nowrap;
+    text-align: right;
+    width: 180px;
+}
+
+/* 部署バッジ */
+.dept-badge {
+    display: inline-block;
+    background-color: #e2e8f0;
+    color: #2d3748;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+/* 操作リンク */
+.action-link {
+    font-size: 13px;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.action-view {
+    color: #2c3e50;
+}
+
+.action-view:hover {
+    background-color: #edf2f7;
+}
+
+.action-edit {
+    color: #2b6cb0;
+}
+
+.action-edit:hover {
+    background-color: #ebf8ff;
+}
+
+.action-delete {
+    color: #e53e3e;
+}
+
+.action-delete:hover {
+    background-color: #fff5f5;
+}
+
+/* データなし */
+.empty-row {
+    text-align: center;
+    padding: 32px;
+    color: #a0aec0;
+    font-size: 14px;
+}
+
+/* フッター */
+.app-footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 12px;
+    color: #a0aec0;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>社員管理システム - 登録完了</title>
+    <link rel="stylesheet" th:href="@{/css/employee-form.css}">
+    <link rel="stylesheet" th:href="@{/css/reg-complete.css}">
+</head>
+<body>
+<header class="app-header">
+    <h1>社員管理システム</h1>
+    <div class="header-info">
+        <span class="user-name">ログインユーザー: 管理者</span>
+    </div>
+</header>
+
+<main class="form-container">
+    <div class="form-card complete-card">
+        <div class="complete-icon">✓</div>
+        <h2 class="complete-title">登録が完了しました</h2>
+        <p class="complete-text">社員情報の登録が正常に完了しました。</p>
+
+        <div class="form-actions complete-actions">
+            <a th:href="@{/employeelist}" class="btn btn-cancel">一覧を見る</a>
+            <a th:href="@{/new}" class="btn btn-primary">続けて登録する</a>
+        </div>
+    </div>
+</main>
+
+<footer class="app-footer">
+    <p>&copy; 2026 Employee Management System</p>
+</footer>
+</body>
+</html>

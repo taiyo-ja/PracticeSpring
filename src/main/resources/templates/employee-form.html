@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>社員管理システム - 社員登録</title>
+    <link rel="stylesheet" th:href="@{/css/employee-form.css}">
+</head>
+<body>
+<header class="app-header">
+    <h1>社員管理システム</h1>
+    <div class="header-info">
+        <span class="user-name">ログインユーザー: 管理者</span>
+    </div>
+</header>
+
+<main class="form-container">
+    <div class="form-header">
+        <h2 class="form-title">社員登録</h2>
+        <a th:href="@{/employeelist}" class="btn btn-back">一覧に戻る</a>
+    </div>
+
+    <div class="form-card">
+        <form th:action="@{/confirm}" method="post">
+
+            <div class="form-group">
+                <label for="name">名前 <span class="required">必須</span></label>
+                <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">メールアドレス <span class="required">必須</span></label>
+                <input type="email" id="email" name="email" placeholder="taro.yamada@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="department">部署 <span class="required">必須</span></label>
+                <input type="text" id="department" name="department" placeholder="開発部" required>
+            </div>
+
+            <div class="form-actions">
+                <input type="reset" value="クリア" class="btn btn-cancel">
+                <button type="submit" class="btn btn-primary">登録する</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer class="app-footer">
+    <p>&copy; 2026 Employee Management System</p>
+</footer>
+</body>
+</html>

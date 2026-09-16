@@ -1,0 +1,37 @@
+@charset "UTF-8";
+.complete-card {
+    text-align: center;
+    padding: 48px 32px;
+}
+
+.complete-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #e6fffa;
+    color: #38a169;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.complete-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.complete-text {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 28px;
+}
+
+.complete-actions {
+    justify-content: center;
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
